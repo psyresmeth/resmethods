@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 subtitle: "Research Methods and Skills"
-date: "12/10/2021"
+date: "12/10/2022"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts",  "xaringan-themer.css", "css/my-theme.css"]
@@ -32,11 +32,11 @@ style_mono_light(base_color = "#23395b",
 # Who are we?
 
 .pull-left[
-| Dr Matt Craddock |
+| Charlotte Cartledge |
 |------------------------------|
-| ![A photograph of Dr Matt Craddock](images/01/matt.jpg) |
-|Sarah Swift Building Room 2226|
-|mcraddock@lincoln.ac.uk       |
+| ![A photograph of Charlotte Cartledge](images/01/charlotte.jfif) |
+|Sarah Swift Building Room 4225|
+|ccartledge@lincoln.ac.uk       |
 ]
 .pull-right[
 | Dr Tochukwu Onwuegbusi |
