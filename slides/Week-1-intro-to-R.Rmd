@@ -35,14 +35,14 @@ style_mono_light(base_color = "#23395b",
 | Dr Tochukwu Onwuegbusi |
 |------------------------------|
 | ![A photograph of Dr Tochukwu Onwuegbusi](images/01/tochs.jpg) |
-|Sarah Swift Building Room 4225|
+|Sarah Swift Building Room 2211|
 |tonwuegbusi@lincoln.ac.uk       |
 ]
 .pull-right[
 | Charlotte Cartledge |
 |------------------------------|
 | ![A photograph of Charlotte Cartledge](images/01/charlotte.jfif) |
-|Sarah Swift Building Room 2211|
+|Sarah Swift Building Room 4225|
 |ccartledge@lincoln.ac.uk       |
 ]
 
