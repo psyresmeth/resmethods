@@ -157,11 +157,11 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 
 .large[
 
-Each week you'll be provided with a set of pre-recorded videos introducing the core topics for that week.
+Where possible you'll be provided with a set of pre-recorded videos each week introducing the core topics for that week.
 
-Most weeks you will be provided with some exercises to work on.
+Most weeks you will be provided with some exercises to work on and complete formative assignment. The aim of the formative stage of the assignment is to enable you to produce an outline of your proposed summative for feedback from the module team.
 
-In timetabled sessions we will spend the first hour going over the week's exercises. In the second hour, you can spend the time working together on the exercises, and we'll be available to help out.
+In the timetabled (lecture) sessions we will spend the first hour going over the topc for that week. In the second hour (workshop), you can spend the time working together on the exercises, and we'll be available to help out. You will finish up with a formative assignment for that week and receive a formative feedback.
 
 If you get stuck **ask us**!]
 
