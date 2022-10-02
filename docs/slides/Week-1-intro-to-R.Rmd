@@ -47,19 +47,6 @@ style_mono_light(base_color = "#23395b",
 ]
 
 ---
-class: center, middle, inverse
-# Replicability and reproducibility 
-
----
-background-image: url(images/01/headlines-repro.png)
-
----
-background-image: url(images/01/F1.large.jpg)
-background-size: contain
-
-[Open Science Collaboration, 2015](dx.doi.org/10.1126/science.aac4716)
-
----
 
 # Scenario A
 .large[
@@ -388,7 +375,7 @@ hello world!
 Otherwise, you'll receive an error like the one above.
 
 ---
-# Why is there an error?
+# The assignment operator
 
 In R, you can assign values to an **object** for subsequent use. **Objects** have names that are written as text.
 
@@ -453,7 +440,7 @@ class: inverse, center, middle
 # Try it out!
 
 ---
-# Try a few things out!
+# Let's try a few things out!
 
 1. Assign some values to objects using the assignment operator (**<-**)
 
@@ -508,7 +495,7 @@ example_mean
 ```
 
 ---
-# Try it out!
+# Let's try it out!
 
 1. Use **c()** to create a vector of numbers.
 
@@ -569,7 +556,7 @@ class: inverse
 background-image: url(images/01/cloud-help.png)
 background-position: 90% 85%
 background-size: 40%
-# Try out the **cowsay** package
+# Let's try out the **cowsay** package
 
 **cowsay** adds a function called **say()**. Load the function in as follows, and look at the help for **say()**.
 ```{r echo = FALSE}
