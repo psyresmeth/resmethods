@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R, part 2"
 subtitle: "Research Methods and Skills"
-date: "19/10/2021"
+date: "11/10/2022"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -392,7 +392,7 @@ Since matrices are two-dimensional, you need to give two indices to make sure yo
 *[row, col]
 ```
 
-Here I extract the number from the 2nd row down, 3rd column across.
+Here I created a 3 x 3 matrix and then extracted the number from the 2nd row down, 3rd column across.
 
 ```{r}
 test_matrix <- matrix(1:9, nrow = 3, ncol = 3)
