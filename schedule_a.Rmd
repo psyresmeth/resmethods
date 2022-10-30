@@ -1,5 +1,5 @@
 ---
-title: "Semester A 2021/2022"
+title: "Semester A 2022/2023"
 description: ""
 output: 
   distill::distill_article:
@@ -13,40 +13,40 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Lectures
 
-### 1. 12/10/2021, Introduction to R
+### 1. 04/10/2022, Introduction to R
 
 - [Slides](slides/Week-1-intro-to-R.html)
 - [PDF](slides/Week-1-intro-to-R.pdf)
 
-### 2. 19/10/2021, Introduction to R, part 2
+### 2. 11/10/2022, Introduction to R, part 2
 
 - [Slides](slides/Week-2-Basic_R.html)
 - [PDF](slides/Week-2-Basic_R.pdf)
 
-### 3. 02/11/2021, The Structure of Data
+### 3. 25/10/2022, The Structure of Data
 - [Slides](slides/Week-4-More-on-Data.html)
 - [PDF](slides/Week-4-More-on-Data.pdf)
 
-### 4. 09/11/2021, Data Visualization
+### 4. 01/11/2022, Data Visualization
 - [Slides](slides/Week-5-Exploring-data-Graphically.html)
 - [PDF](slides/Week-5-Exploring-data-Graphically.pdf)
 
-### 5. 16/11/2021, Transforming and Summarising Data
+### 5. 08/11/2022, Transforming and Summarising Data
 - [Slides](slides/Week-6-data-wrangling.html)
 - [PDF](slides/Week-6-data-wrangling.pdf)
 
-### 6. 23/11/2021, The Basics of Statistical Testing
+### 6. 15/11/2022, The Basics of Statistical Testing
 - [Slides](slides/Week-7-NHST-two-means.html)
 - [PDF](slides/Week-7-NHST-two-means.pdf)
 
-### 7. 30/11/2021, Correlation and Regression
+### 7. 22/11/2022, Correlation and Regression
 - [Slides](slides/Week-8-Correlation-Regression.html)
 - [PDF](slides/Week-8-Correlation-Regression.pdf)
 
-### 8. 07/12/2021, Multiple Regression and ANOVA
+### 8. 29/11/2022, Multiple Regression and ANOVA
 - [Slides](slides/Week-9-Multi-Regression-ANOVA.html)
 - [PDF](slides/Week-9-Multi-Regression-ANOVA.pdf)
 
-### 9. 14/12/2021, Repeated Measures and Factorial ANOVA
+### 9. 06/12/2022, Repeated Measures and Factorial ANOVA
 - [Slides](slides/Week-10-Repeated-and-Factorial-ANOVA.html)
 - [PDF](slides/Week-10-Repeated-and-Factorial-ANOVA.pdf)
