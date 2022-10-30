@@ -1,7 +1,7 @@
 ---
 title: "The structure of data"
 subtitle: "Research Methods and Skills"
-date: "25/10/2022"
+date: "02/11/2021"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -23,7 +23,8 @@ xaringanExtra::use_extra_styles()
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(fig.asp = .618,
                       fig.width = 6)
-
+library(tidyverse)
+FearofCrime <- read_csv("data/FearofCrime.CSV")
 ```
 ```{r xaringantheme, include = FALSE, warning = FALSE}
 library(xaringanthemer)
@@ -31,6 +32,19 @@ style_mono_light(base_color = "#23395b",
                  base_font_size = "21px",
                  link_color = "#C80039")
 ```
+
+```{r echo = FALSE, message = FALSE}
+example_rt_df <- 
+  data.frame(Participant = rep(1:10,
+                               each = 10),
+             Viewpoint = c("Same", "Different"),
+             B1RT = rnorm(20, 500, 100),
+             B2RT = rnorm(20, 400, 100)) %>%
+  group_by(Participant, Viewpoint) %>%
+  summarise(B1RT = mean(B1RT),
+            B2RT = mean(B2RT))
+```
+
 # Writing R Scripts
 
 Scripts are text documents that contain a sequence of commands to be executed sequentially.
@@ -209,7 +223,6 @@ library(tibble)
 You can create a *tibble* similar to how you create a data frame, using **tibble()**.
 
 ```{r}
-library(tibble)
 age_tibb <- 
   tibble(Participant = 1:10, 
          cond1 = rnorm(10),
