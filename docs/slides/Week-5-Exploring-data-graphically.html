@@ -20,9 +20,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Visualizing data
+]
+.subtitle[
 ## PSY9219M &amp; PSY9251M
-### 9/11/2021
+]
+.date[
+### 01/11/20222
+]
 
 ---
 
@@ -35,26 +41,26 @@ class: center, middle, inverse, title-slide
 .pull-left[
 
 ```
-## # A tibble: 16 x 4
+## # A tibble: 16 × 4
 ## # Groups:   Participant [8]
 ##    Participant Viewpoint  B1RT  B2RT
 ##          &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
-##  1           1 Different  453.  428.
-##  2           1 Same       439.  387.
-##  3           2 Different  515.  341.
-##  4           2 Same       475.  392.
-##  5           3 Different  458.  285.
-##  6           3 Same       455.  474.
-##  7           4 Different  587.  345.
-##  8           4 Same       465.  483.
-##  9           5 Different  540.  304.
-## 10           5 Same       483.  376.
-## 11           6 Different  476.  446.
-## 12           6 Same       496.  360.
-## 13           7 Different  529.  365.
-## 14           7 Same       563.  442.
-## 15           8 Different  514.  352.
-## 16           8 Same       472.  373.
+##  1           1 Different  555.  446.
+##  2           1 Same       504.  356.
+##  3           2 Different  548.  351.
+##  4           2 Same       432.  326.
+##  5           3 Different  570.  372.
+##  6           3 Same       500.  405.
+##  7           4 Different  555.  379.
+##  8           4 Same       493.  412.
+##  9           5 Different  458.  344.
+## 10           5 Same       498.  411.
+## 11           6 Different  492.  395.
+## 12           6 Same       515.  367.
+## 13           7 Different  539.  380.
+## 14           7 Same       568.  423.
+## 15           8 Different  538.  398.
+## 16           8 Same       530.  393.
 ```
 ]
 .pull-right[
@@ -115,20 +121,22 @@ Here's some recent data about the UK's prison population.
 
 
 ```
-## # A tibble: 22,409 x 6
-##    View          Date   Establishment Sex   `Age / Custody / Nationa~ Population
-##    &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt;
-##  1 a Establishm~ 2015-~ Altcourse     Male  Adults (21+)                     922
-##  2 a Establishm~ 2015-~ Altcourse     Male  Juveniles and Young Adul~        169
-##  3 a Establishm~ 2015-~ Ashfield      Male  Adults (21+)                     389
-##  4 a Establishm~ 2015-~ Askham Grange Fema~ Adults (21+)                      NA
-##  5 a Establishm~ 2015-~ Askham Grange Fema~ Juveniles and Young Adul~         NA
-##  6 a Establishm~ 2015-~ Aylesbury     Male  Adults (21+)                     113
-##  7 a Establishm~ 2015-~ Aylesbury     Male  Juveniles and Young Adul~        268
-##  8 a Establishm~ 2015-~ Bedford       Male  Adults (21+)                     459
-##  9 a Establishm~ 2015-~ Bedford       Male  Juveniles and Young Adul~         30
-## 10 a Establishm~ 2015-~ Belmarsh      Male  Adults (21+)                     794
-## # ... with 22,399 more rows
+## # A tibble: 22,409 × 6
+##    View                          Date    Establishment Sex    Age / Cu…¹ Popul…²
+##    &lt;chr&gt;                         &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;
+##  1 a Establishment*Sex*Age Group 2015-06 Altcourse     Male   Adults (2…     922
+##  2 a Establishment*Sex*Age Group 2015-06 Altcourse     Male   Juveniles…     169
+##  3 a Establishment*Sex*Age Group 2015-06 Ashfield      Male   Adults (2…     389
+##  4 a Establishment*Sex*Age Group 2015-06 Askham Grange Female Adults (2…      NA
+##  5 a Establishment*Sex*Age Group 2015-06 Askham Grange Female Juveniles…      NA
+##  6 a Establishment*Sex*Age Group 2015-06 Aylesbury     Male   Adults (2…     113
+##  7 a Establishment*Sex*Age Group 2015-06 Aylesbury     Male   Juveniles…     268
+##  8 a Establishment*Sex*Age Group 2015-06 Bedford       Male   Adults (2…     459
+##  9 a Establishment*Sex*Age Group 2015-06 Bedford       Male   Juveniles…      30
+## 10 a Establishment*Sex*Age Group 2015-06 Belmarsh      Male   Adults (2…     794
+## # … with 22,399 more rows, and abbreviated variable names
+## #   ¹​`Age / Custody / Nationality / Offence Group`, ²​Population
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 Retrieved from [data.gov.uk](https://data.gov.uk/dataset/f3f79bba-d74a-4c6a-85f3-f29881349a34/offender-management-statistics) - Contains public sector information licensed under the Open Government Licence v3.0.
@@ -360,20 +368,21 @@ mpg
 ```
 
 ```
-## # A tibble: 234 x 11
+## # A tibble: 234 × 11
 ##    manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
 ##    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
-##  1 audi         a4           1.8  1999     4 auto~ f        18    29 p     comp~
-##  2 audi         a4           1.8  1999     4 manu~ f        21    29 p     comp~
-##  3 audi         a4           2    2008     4 manu~ f        20    31 p     comp~
-##  4 audi         a4           2    2008     4 auto~ f        21    30 p     comp~
-##  5 audi         a4           2.8  1999     6 auto~ f        16    26 p     comp~
-##  6 audi         a4           2.8  1999     6 manu~ f        18    26 p     comp~
-##  7 audi         a4           3.1  2008     6 auto~ f        18    27 p     comp~
-##  8 audi         a4 quattro   1.8  1999     4 manu~ 4        18    26 p     comp~
-##  9 audi         a4 quattro   1.8  1999     4 auto~ 4        16    25 p     comp~
-## 10 audi         a4 quattro   2    2008     4 manu~ 4        20    28 p     comp~
-## # ... with 224 more rows
+##  1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+##  2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+##  3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+##  4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+##  5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+##  6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+##  7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+##  8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+##  9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+## 10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+## # … with 224 more rows
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 ---
@@ -1095,6 +1104,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
