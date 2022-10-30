@@ -3,7 +3,6 @@
   <head>
     <title>The structure of data</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2021-02-11" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -20,9 +19,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # The structure of data
+]
+.subtitle[
 ## Research Methods and Skills
-### 02/11/2021
+]
+.date[
+### 25/10/2022
+]
 
 ---
 
@@ -150,10 +155,10 @@ test_matrix
 ```
 
 ```
-##           [,1]       [,2]       [,3]
-## [1,] 0.2353145  1.3929560  0.2605482
-## [2,] 1.0336660 -0.8899093 -0.9559970
-## [3,] 0.4376461  1.3994929  0.7738423
+##            [,1]      [,2]        [,3]
+## [1,] -0.8354471 0.8782189 -0.01441798
+## [2,] -1.3572108 1.2522531 -0.11939396
+## [3,]  0.9219538 0.5992309  0.69609389
 ```
 ]
 .pull-right[
@@ -172,9 +177,9 @@ test_matrix[2:3, 1:2]
 ```
 
 ```
-##           [,1]       [,2]
-## [1,] 1.0336660 -0.8899093
-## [2,] 0.4376461  1.3994929
+##            [,1]      [,2]
+## [1,] -1.3572108 1.2522531
+## [2,]  0.9219538 0.5992309
 ```
 ]
 
@@ -259,15 +264,15 @@ head(age_tibb)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   Participant  cond1 age_group
 ##         &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;    
-## 1           1  1.39  Old      
-## 2           2 -0.212 Old      
-## 3           3 -0.535 Old      
-## 4           4  0.653 Old      
-## 5           5  0.459 Old      
-## 6           6  1.30  Young
+## 1           1 -0.804 Old      
+## 2           2  0.728 Old      
+## 3           3 -0.144 Old      
+## 4           4  0.905 Old      
+## 5           5  1.07  Old      
+## 6           6  0.134 Young
 ```
 
 ---
@@ -369,20 +374,27 @@ FearofCrime
 ```
 
 ```
-## # A tibble: 301 x 169
-##    ResponseID  ResponseSet Name  ExternalDataRef~ Status StartDate EndDate Finished
-##    &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt; &lt;lgl&gt;             &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt;
-##  1 R_ai4tgG1G~ Default Re~ Anon~ NA                    0 19/10/14~ 19/10/~        1
-##  2 R_d5OiATV0~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  3 R_aaBVZUe9~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  4 R_6nxInLKQ~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  5 R_6SCYbhOP~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  6 R_5pCxWA6q~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  7 R_d1nji6V7~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  8 R_9v6ZgUhK~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-##  9 R_5Bg7VjBh~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-## 10 R_9Sv17lQG~ Default Re~ Anon~ NA                    0 20/10/14~ 20/10/~        1
-## # ... with 291 more rows, and 161 more variables: ...
+## # A tibble: 301 × 169
+##    ResponseID Respo…¹ Name  Exter…² Status Start…³ EndDate Finis…⁴ Conse…⁵   sex
+##    &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt; &lt;lgl&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 R_ai4tgG1… Defaul… Anon… NA           0 19/10/… 19/10/…       1       1     2
+##  2 R_d5OiATV… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     2
+##  3 R_aaBVZUe… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     1
+##  4 R_6nxInLK… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     1
+##  5 R_6SCYbhO… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     2
+##  6 R_5pCxWA6… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     1
+##  7 R_d1nji6V… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     2
+##  8 R_9v6ZgUh… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     1
+##  9 R_5Bg7VjB… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     2
+## 10 R_9Sv17lQ… Defaul… Anon… NA           0 20/10/… 20/10/…       1       1     2
+## # … with 291 more rows, 159 more variables: age &lt;dbl&gt;, hexaco1 &lt;dbl&gt;,
+## #   hexaco2 &lt;dbl&gt;, hexaco3 &lt;dbl&gt;, hexaco4 &lt;dbl&gt;, hexaco5 &lt;dbl&gt;, hexaco6 &lt;dbl&gt;,
+## #   hexaco7 &lt;dbl&gt;, hexaco8 &lt;dbl&gt;, hexaco9 &lt;dbl&gt;, hexaco10 &lt;dbl&gt;,
+## #   hexaco11 &lt;dbl&gt;, hexaco12 &lt;dbl&gt;, hexaco13 &lt;dbl&gt;, hexaco14 &lt;dbl&gt;,
+## #   hexaco15 &lt;dbl&gt;, hexaco16 &lt;dbl&gt;, hexaco17 &lt;dbl&gt;, hexaco18 &lt;dbl&gt;,
+## #   hexaco19 &lt;dbl&gt;, hexaco20 &lt;dbl&gt;, hexaco21 &lt;dbl&gt;, hexaco22 &lt;dbl&gt;,
+## #   hexaco23 &lt;dbl&gt;, hexaco24 &lt;dbl&gt;, hexaco25 &lt;dbl&gt;, hexaco26 &lt;dbl&gt;, …
+## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 ---
@@ -557,7 +569,7 @@ class: inverse, center, middle
 .pull-left[
 
 ```
-## # A tibble: 40 x 3
+## # A tibble: 40 × 3
 ## # Groups:   Participant [10]
 ##    Participant exp_condition       RT
 ##          &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -571,7 +583,8 @@ class: inverse, center, middle
 ##  8           2 Block2_same       402.
 ##  9           3 Block1_different  368.
 ## 10           3 Block1_same       341.
-## # ... with 30 more rows
+## # … with 30 more rows
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 ]
 .pull-right[
@@ -587,7 +600,7 @@ At first glance, there's no easy way to see how many variables there.
 .pull-left[
 
 ```
-## # A tibble: 16 x 4
+## # A tibble: 16 × 4
 ## # Groups:   Participant [8]
 ##    Participant Viewpoint  B1RT  B2RT
 ##          &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
@@ -623,7 +636,7 @@ The dependent variable (reaction time) is spread across two columns.
 # One column per condition
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    Participant Block1_same Block2_same Block1_different Block2_different
 ##          &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ##  1           1        515.        268.             546.             413.
@@ -647,7 +660,7 @@ This is also called **wide** format.
 
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    Participant Block1_same Block2_same Block1_different Block2_different
 ##          &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ##  1           1        515.        268.             546.             413.
@@ -679,7 +692,7 @@ ncol(example_rt_df)
 
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    Participant Block1_same Block2_same Block1_different Block2_different
 ##          &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ##  1           1        515.        268.             546.             413.
@@ -714,7 +727,7 @@ nrow(example_rt_df)
 # One column per condition
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    Participant Block1_same Block2_same Block1_different Block2_different
 ##          &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ##  1           1        515.        268.             546.             413.
@@ -766,7 +779,7 @@ head(example_rt_df, n = 4)
 ```
 
 ```
-## # A tibble: 4 x 5
+## # A tibble: 4 × 5
 ##   Participant Block1_same Block2_same Block1_different Block2_different
 ##         &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ## 1           1        508.        340.             522.             295.
@@ -818,7 +831,7 @@ head(long_rt)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   Participant exp_cond            RT
 ##         &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt;
 ## 1           1 Block1_same       508.
@@ -845,7 +858,7 @@ head(long_rt)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   Participant exp_cond            RT
 ##         &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt;
 ## 1           1 Block1_same       508.
@@ -868,7 +881,7 @@ head(long_rt)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   Participant exp_cond            RT
 ##         &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt;
 ## 1           1 Block1_same       508.
@@ -893,7 +906,7 @@ head(long_rt)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   Participant exp_cond            RT
 ##         &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt;
 ## 1           1 Block1_same       508.
@@ -935,7 +948,7 @@ head(long_rt)
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##   Participant Block  Viewpoint    RT
 ##         &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;
 ## 1           1 Block1 same       508.
@@ -970,7 +983,7 @@ pivot_longer(example_rt_df,
 .pull-left[
 
 ```
-## # A tibble: 15 x 4
+## # A tibble: 15 × 4
 ##    Participant Block  Viewpoint    RT
 ##          &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;
 ##  1           1 Block1 same       508.
@@ -1019,7 +1032,7 @@ head(wide_rt, 10)
 ```
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    Participant Block1_same Block2_same Block1_different Block2_different
 ##          &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ##  1           1        508.        340.             522.             295.
@@ -1058,7 +1071,12 @@ We can produce some summary statistics using **dplyr** (more soon!)
 
 
 ```
-## # A tibble: 4 x 4
+## `summarise()` has grouped output by 'Block'. You can override using the
+## `.groups` argument.
+```
+
+```
+## # A tibble: 4 × 4
 ## # Groups:   Block [2]
 ##   Block  Viewpoint mean_RT sd_RT
 ##   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
@@ -1133,7 +1151,7 @@ example_rt_df &lt;-
 ```
 
 ```
-## # A tibble: 5 x 5
+## # A tibble: 5 × 5
 ##   Participant Block1_same Block2_same Block1_different Block2_different
 ##         &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
 ## 1           1        508.        340.             522.             295.
@@ -1191,6 +1209,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

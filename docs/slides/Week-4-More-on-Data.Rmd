@@ -1,7 +1,7 @@
 ---
 title: "The structure of data"
 subtitle: "Research Methods and Skills"
-date: "02/11/2021"
+date: "25/10/2022"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
