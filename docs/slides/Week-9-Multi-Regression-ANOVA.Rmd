@@ -1,6 +1,6 @@
 ---
 title: "Multiple predictors and multiple means"
-date: "7/12/2021"
+date: "29/11/2022"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -22,6 +22,7 @@ library(ggdag)
 library(ggforce)
 library(sjPlot)
 library(performance)
+library(see)
 xaringanExtra::use_webcam()
 xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
