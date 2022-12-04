@@ -1,6 +1,6 @@
 ---
 title: "Repeated measures and factorial ANOVA"
-date: "14/12/2021"
+date: "06/12/2022"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -399,7 +399,7 @@ noise_within_aov
 ```
 
 .large[
-"There was a significant effect of noise level on test scores, [F(1.81, 88.54) = 26.54, *p* < .001]. Test performance without noise and with quiet noise did not significantly differ (*p* = .5), but both were significantly better than performance in the loud noise condition (*p*s < .001)." 
+"There was a significant effect of noise level on test scores, [*F*(1.81, 88.54) = 26.54, *p* < .001]. Test performance without noise and with quiet noise did not significantly differ (*p* = .387), but both were significantly better than performance in the loud noise condition (*p*s < .001)." 
 ]
 
 ---
@@ -687,7 +687,7 @@ Make sure that somewhere in your text is a description of which type of ANOVA yo
 noise_aov_mixed
 ```
 
-There was a significant main effect of Difficulty [F(1, 98) = 98.54, p < .001], with better test performance when the test was easy (mean = 7.62) compared to when the test was hard (mean = 5.15).
+There was a significant main effect of Difficulty [*F*(1, 98) = 98.54, *p* < .001], with better test performance when the test was easy (mean = 7.62) compared to when the test was hard (mean = 5.15).
 
 *NB: since there are only two levels, no post-hoc test is necessary!*
 
@@ -698,7 +698,7 @@ There was a significant main effect of Difficulty [F(1, 98) = 98.54, p < .001], 
 noise_aov_mixed
 ```
 
-There was a significant main effect of noise [F(1.98, 194.13) = 15.08, *p* < .001]. Test scores were significantly lower with loud noise (5.79) than with no noise (mean = 6.91; *p* < .001) or with quiet noise (6.44; *p* = .005). There was no significant difference between the "no noise" and "quiet noise" conditions (*p* =.06).
+There was a significant main effect of noise [*F*(1.98, 194.13) = 15.08, *p* < .001]. Test scores were significantly lower with loud noise (5.79) than with no noise (mean = 6.91; *p* < .001) or with quiet noise (6.44; *p* = .005). There was no significant difference between the "no noise" and "quiet noise" conditions (*p* =.062).
 
 ---
 # Reporting factorial ANOVAs
@@ -707,4 +707,4 @@ There was a significant main effect of noise [F(1.98, 194.13) = 15.08, *p* < .00
 noise_aov_mixed
 ```
 
-Finally, there was also a significant interaction between Noise and Difficulty [F(1.98, 194.13) = 13.09, p < .001], see Figure X. Simple main effects analysis, corrected for multiple comparisons using Tukey's HSD, found that when test difficulty was Easy, there were no significant differences between any level of Noise (all *p*s > .58). However, in the Hard condition, test performance was significantly better when there was no noise (mean = 6.25) compared to when there was either quiet (5.11; *p* < .001) or loud noise (4.08, *p* < .001). Performance was also significantly worse for loud noise relative to quiet noise (*p* = .002).
+Finally, there was also a significant interaction between Noise and Difficulty [*F*(1.98, 194.13) = 13.09, *p* < .001], see Figure X. Simple main effects analysis, corrected for multiple comparisons using Tukey's HSD, found that when test difficulty was Easy, there were no significant differences between any level of Noise (all *p*s > .58). However, in the Hard condition, test performance was significantly better when there was no noise (mean = 6.25) compared to when there was either quiet (5.11; *p* < .001) or loud noise (4.08, *p* < .001). Performance was also significantly worse for loud noise relative to quiet noise (*p* = .002).
