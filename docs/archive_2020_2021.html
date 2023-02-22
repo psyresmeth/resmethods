@@ -789,6 +789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1861,15 +1862,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2068,7 +2075,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2179,13 +2186,11 @@ Archive
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#semester-a-psy9251mpsy9219m"
-id="toc-semester-a-psy9251mpsy9219m">Semester A, PSY9251M/PSY9219M</a>
+<li><a href="#semester-a-psy9251mpsy9219m" id="toc-semester-a-psy9251mpsy9219m">Semester A, PSY9251M/PSY9219M</a>
 <ul>
 <li><a href="#lectures" id="toc-lectures">Lectures</a></li>
 </ul></li>
-<li><a href="#semester-b-psy9250mpsy9003"
-id="toc-semester-b-psy9250mpsy9003">Semester B, PSY9250M/PSY9003</a>
+<li><a href="#semester-b-psy9250mpsy9003" id="toc-semester-b-psy9250mpsy9003">Semester B, PSY9250M/PSY9003</a>
 <ul>
 <li><a href="#lectures-1" id="toc-lectures-1">Lectures</a></li>
 </ul></li>
@@ -2198,8 +2203,7 @@ id="toc-semester-b-psy9250mpsy9003">Semester B, PSY9250M/PSY9003</a>
 <ul>
 <li><a href="archive/slides/Week-1-intro-to-R.html">Slides</a></li>
 </ul>
-<h3 id="introduction-to-r-part-2">2. 20/10/2020, Introduction to R, part
-2</h3>
+<h3 id="introduction-to-r-part-2">2. 20/10/2020, Introduction to R, part 2</h3>
 <ul>
 <li><a href="archive/slides/Week-2-Basic_R.html">Slides</a></li>
 </ul>
@@ -2209,77 +2213,54 @@ id="toc-semester-b-psy9250mpsy9003">Semester B, PSY9250M/PSY9003</a>
 </ul>
 <h3 id="data-visualization">4. 03/11/2020, Data Visualization</h3>
 <ul>
-<li><a
-href="archive/slides/Week-4-Exploring-data-graphically.html">Slides</a></li>
+<li><a href="archive/slides/Week-4-Exploring-data-graphically.html">Slides</a></li>
 </ul>
-<h3 id="importing-transforming-and-summarising-data">5. 10/11/2020,
-Importing, Transforming, and Summarising Data</h3>
+<h3 id="importing-transforming-and-summarising-data">5. 10/11/2020, Importing, Transforming, and Summarising Data</h3>
 <ul>
-<li><a
-href="archive/slides/Week-5-Import-and-wrangling.html">Slides</a></li>
+<li><a href="archive/slides/Week-5-Import-and-wrangling.html">Slides</a></li>
 </ul>
-<h3 id="the-basics-of-statistical-testing">6. 24/11/2020, The Basics of
-Statistical Testing</h3>
+<h3 id="the-basics-of-statistical-testing">6. 24/11/2020, The Basics of Statistical Testing</h3>
 <ul>
 <li><a href="archive/slides/Week-7-NHST-two-means.html">Slides</a></li>
 </ul>
-<h3 id="correlation-and-regression">7. 01/12/2020, Correlation and
-Regression</h3>
+<h3 id="correlation-and-regression">7. 01/12/2020, Correlation and Regression</h3>
 <ul>
-<li><a
-href="archive/slides/Week-8-Correlation-Regression.html">Slides</a></li>
+<li><a href="archive/slides/Week-8-Correlation-Regression.html">Slides</a></li>
 </ul>
-<h3 id="multiple-regression-and-anova">8. 08/12/2020, Multiple
-Regression and ANOVA</h3>
+<h3 id="multiple-regression-and-anova">8. 08/12/2020, Multiple Regression and ANOVA</h3>
 <ul>
-<li><a
-href="archive/slides/Week-9-Multi-Regression-ANOVA.html">Slides</a></li>
+<li><a href="archive/slides/Week-9-Multi-Regression-ANOVA.html">Slides</a></li>
 </ul>
-<h3 id="repeated-measures-and-factorial-anova">9. 15/12/2020, Repeated
-Measures and Factorial ANOVA</h3>
+<h3 id="repeated-measures-and-factorial-anova">9. 15/12/2020, Repeated Measures and Factorial ANOVA</h3>
 <ul>
-<li><a
-href="slides/Week-10-Repeated-and-Factorial-ANOVA.html">Slides</a></li>
+<li><a href="slides/Week-10-Repeated-and-Factorial-ANOVA.html">Slides</a></li>
 </ul>
 <h1 id="semester-b-psy9250mpsy9003">Semester B, PSY9250M/PSY9003</h1>
 <h2 id="lectures-1">Lectures</h2>
-<h3 id="getting-back-into-r-with-messy-data">1. 16/03/2021, Getting back
-into R with messy data</h3>
+<h3 id="getting-back-into-r-with-messy-data">1. 16/03/2021, Getting back into R with messy data</h3>
 <ul>
-<li><a href="archive/slides/Week-23-messy-data.html">HTML
-Slides</a></li>
+<li><a href="archive/slides/Week-23-messy-data.html">HTML Slides</a></li>
 <li><a href="archive/slides/B-1-messy-data.pdf">PDF Slides</a></li>
 </ul>
-<h3 id="statistical-power-and-effect-sizes">2. 23/03/2021, Statistical
-power and effect sizes</h3>
+<h3 id="statistical-power-and-effect-sizes">2. 23/03/2021, Statistical power and effect sizes</h3>
 <ul>
-<li><a href="archive/slides/2-Power-and-Effect-Sizes.html">HTML
-Slides</a></li>
-<li><a href="archive/slides/2-Power-and-Effect-Sizes.pdf">PDF
-Slides</a></li>
+<li><a href="archive/slides/2-Power-and-Effect-Sizes.html">HTML Slides</a></li>
+<li><a href="archive/slides/2-Power-and-Effect-Sizes.pdf">PDF Slides</a></li>
 </ul>
-<h3 id="multiple-and-logistic-regression">3. 13/04/2021, Multiple and
-logistic regression</h3>
+<h3 id="multiple-and-logistic-regression">3. 13/04/2021, Multiple and logistic regression</h3>
 <ul>
-<li><a href="archive/slides/3-generalized-linear-models.html">HTML
-Slides</a></li>
-<li><a href="archive/slides/3-generalized-linear-models.pdf">PDF
-Slides</a></li>
+<li><a href="archive/slides/3-generalized-linear-models.html">HTML Slides</a></li>
+<li><a href="archive/slides/3-generalized-linear-models.pdf">PDF Slides</a></li>
 </ul>
 <h3 id="multilevel-analysis">4. 20/04/2021, Multilevel analysis</h3>
 <ul>
-<li><a href="archive/slides/4-multilevel-modelling.html">HTML
-Slides</a></li>
-<li><a href="archive/slides/4-multilevel-modelling.pdf">PDF
-Slides</a></li>
+<li><a href="archive/slides/4-multilevel-modelling.html">HTML Slides</a></li>
+<li><a href="archive/slides/4-multilevel-modelling.pdf">PDF Slides</a></li>
 </ul>
-<h3 id="moderation-and-mediation">5. 27/04/2021, Moderation and
-Mediation</h3>
+<h3 id="moderation-and-mediation">5. 27/04/2021, Moderation and Mediation</h3>
 <ul>
-<li><a href="archive/slides/5-Moderation-Mediation.html">HTML
-Slides</a></li>
-<li><a href="archive/slides/5-Moderation-Mediation.pdf">PDF
-Slides</a></li>
+<li><a href="archive/slides/5-Moderation-Mediation.html">HTML Slides</a></li>
+<li><a href="archive/slides/5-Moderation-Mediation.pdf">PDF Slides</a></li>
 </ul>
 <h3 id="factor-analysis">6. 04/05/2021, Factor analysis</h3>
 <ul>
@@ -2288,20 +2269,15 @@ Slides</a></li>
 </ul>
 <h3 id="statistics-done-wrong">7. 11/05/2021, Statistics done wrong</h3>
 <ul>
-<li><a href="archive/slides/7-stats-done-wrong.html">HTML
-Slides</a></li>
+<li><a href="archive/slides/7-stats-done-wrong.html">HTML Slides</a></li>
 <li><a href="archive/slides/7-stats-done-wrong.pdf">PDF Slides</a></li>
 </ul>
-<h3 id="r-from-start-to-finish">8. 18/05/2021, R from start to
-finish</h3>
+<h3 id="r-from-start-to-finish">8. 18/05/2021, R from start to finish</h3>
 <ul>
-<li><a href="archive/slides/8-R-from-start-to-finish.html">HTML
-Slides</a></li>
-<li><a href="archive/slides/8-R-from-start-to-finish.pdf">PDF
-Slides</a></li>
+<li><a href="archive/slides/8-R-from-start-to-finish.html">HTML Slides</a></li>
+<li><a href="archive/slides/8-R-from-start-to-finish.pdf">PDF Slides</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

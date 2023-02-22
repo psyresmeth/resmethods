@@ -789,6 +789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1861,15 +1862,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2068,7 +2075,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2170,76 +2177,42 @@ Archive
 <h1>Research Methods and Skills</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Data manipulation, research methods, and statistics in
-Psychology</p></p>
+<p><p>Data manipulation, research methods, and statistics in Psychology</p></p>
 </div>
 
 
 <div class="d-article">
-<p>This is the homepage for the R-based sections of the University of
-Lincoln’s MSc programmes in Developmental Psychology, Research Methods
-in Psychology, and Forensic Psychology.</p>
+<p>This is the homepage for the R-based sections of the University of Lincoln’s MSc programmes in Developmental Psychology, Research Methods in Psychology, and Forensic Psychology.</p>
 <hr />
-<h2 id="semester-a---psy9251mpsy9219m">Semester A -
-PSY9251M/PSY9219M</h2>
-<h3
-id="research-methods-in-psychologyresearch-methods-and-skills">Research
-Methods in Psychology/Research Methods and Skills</h3>
-<p>Module co-ordinator: <a
-href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu
-Onwuegbusi</a></p>
+<h2 id="semester-a---psy9251mpsy9219m">Semester A - PSY9251M/PSY9219M</h2>
+<h3 id="research-methods-in-psychologyresearch-methods-and-skills">Research Methods in Psychology/Research Methods and Skills</h3>
+<p>Module co-ordinator: <a href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu Onwuegbusi</a></p>
 <p><strong>Staff:</strong></p>
 <ul>
-<li><a href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu
-Onwuegbusi</a></li>
-<li><a href="https://staff.lincoln.ac.uk/ccartledge">Charlotte
-Cartledge</a></li>
-<li><a href="https://staff.lincoln.ac.uk/ahorowitz">Ava
-Horowitz</a></li>
-<li><a href="https://staff.lincoln.ac.uk/phylton">Patrick
-Hylton</a></li>
+<li><a href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu Onwuegbusi</a></li>
+<li><a href="https://staff.lincoln.ac.uk/ccartledge">Charlotte Cartledge</a></li>
+<li><a href="https://staff.lincoln.ac.uk/ahorowitz">Ava Horowitz</a></li>
+<li><a href="https://staff.lincoln.ac.uk/phylton">Patrick Hylton</a></li>
 </ul>
 <h2 id="semester-b---psy9250mpsy9003">Semester B - PSY9250M/PSY9003</h2>
-<h3
-id="advanced-research-methods-in-psychologyadvanced-research-methods-and-skills">Advanced
-Research Methods in Psychology/Advanced Research Methods and Skills</h3>
-<p>Module co-ordinator: <a
-href="https://staff.lincoln.ac.uk/ccartledge">Charlotte
-Cartledge</a></p>
+<h3 id="advanced-research-methods-in-psychologyadvanced-research-methods-and-skills">Advanced Research Methods in Psychology/Advanced Research Methods and Skills</h3>
+<p>Module co-ordinator: <a href="https://staff.lincoln.ac.uk/ccartledge">Charlotte Cartledge</a></p>
 <p><strong>Staff:</strong></p>
 <ul>
-<li><a href="https://staff.lincoln.ac.uk/ccartledge">Charlotte
-Cartledge</a></li>
-<li><a href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu
-Onwuegbusi</a></li>
-<li><a href="https://staff.lincoln.ac.uk/mmireku">Michael
-Mireku</a></li>
+<li><a href="https://staff.lincoln.ac.uk/ccartledge">Charlotte Cartledge</a></li>
+<li><a href="https://staff.lincoln.ac.uk/tonwuegbusi">Tochukwu Onwuegbusi</a></li>
+<li><a href="https://staff.lincoln.ac.uk/mmireku">Michael Mireku</a></li>
 </ul>
 <hr />
-<h2 id="getting-set-up-for-the-course">Getting set up for the
-course</h2>
-<p>For both Semester A and Semester B modules, we expect you to download
-and install R and RStudio. You will need the following:</p>
+<h2 id="getting-set-up-for-the-course">Getting set up for the course</h2>
+<p>For both Semester A and Semester B modules, we expect you to download and install R and RStudio. You will need the following:</p>
 <ul>
-<li>A recent version of R, <a
-href="https://cloud.r-project.org">download from here</a>.</li>
-<li>A recent version of RStudio, <a
-href="https://rstudio.com/products/rstudio/download/#download">download
-from here</a></li>
+<li>A recent version of R, <a href="https://cloud.r-project.org">download from here</a>.</li>
+<li>A recent version of RStudio, <a href="https://rstudio.com/products/rstudio/download/#download">download from here</a></li>
 </ul>
-<p>You’ll find a fantastic video guide to installing R and RStudio by <a
-href="https://djnavarro.net">Danielle Navarro</a> over on <a
-href="https://www.youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd">YouTube</a></p>
-<p>Another possibility is <a
-href="https://rstudio.cloud">RStudio.cloud</a>, a web-based version of
-<a href="https://rstudio.com">RStudio</a> accessible from anywhere using
-a web-browser such as <a
-href="https://www.google.com/intl/en_uk/chrome/">Chrome</a>. For many
-parts of the course, the 25 hours free monthly access will be
-sufficient. However, you may find that during assessment times this
-isn’t adequate for your needs.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>You’ll find a fantastic video guide to installing R and RStudio by <a href="https://djnavarro.net">Danielle Navarro</a> over on <a href="https://www.youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd">YouTube</a></p>
+<p>Another possibility is <a href="https://rstudio.cloud">RStudio.cloud</a>, a web-based version of <a href="https://rstudio.com">RStudio</a> accessible from anywhere using a web-browser such as <a href="https://www.google.com/intl/en_uk/chrome/">Chrome</a>. For many parts of the course, the 25 hours free monthly access will be sufficient. However, you may find that during assessment times this isn’t adequate for your needs.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

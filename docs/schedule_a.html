@@ -789,6 +789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1861,15 +1862,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2068,7 +2075,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2189,8 +2196,7 @@ Archive
 <li><a href="slides/Week-1-intro-to-R.html">Slides</a></li>
 <li><a href="slides/Week-1-intro-to-R.pdf">PDF</a></li>
 </ul>
-<h3 id="introduction-to-r-part-2">2. 11/10/2022, Introduction to R, part
-2</h3>
+<h3 id="introduction-to-r-part-2">2. 11/10/2022, Introduction to R, part 2</h3>
 <ul>
 <li><a href="slides/Week-2-Basic_R.html">Slides</a></li>
 <li><a href="slides/Week-2-Basic_R.pdf">PDF</a></li>
@@ -2202,44 +2208,35 @@ Archive
 </ul>
 <h3 id="data-visualization">4. 01/11/2022, Data Visualization</h3>
 <ul>
-<li><a
-href="slides/Week-5-Exploring-data-Graphically.html">Slides</a></li>
+<li><a href="slides/Week-5-Exploring-data-Graphically.html">Slides</a></li>
 <li><a href="slides/Week-5-Exploring-data-Graphically.pdf">PDF</a></li>
 </ul>
-<h3 id="transforming-and-summarising-data">5. 08/11/2022, Transforming
-and Summarising Data</h3>
+<h3 id="transforming-and-summarising-data">5. 08/11/2022, Transforming and Summarising Data</h3>
 <ul>
 <li><a href="slides/Week-6-data-wrangling.html">Slides</a></li>
 <li><a href="slides/Week-6-data-wrangling.pdf">PDF</a></li>
 </ul>
-<h3 id="the-basics-of-statistical-testing">6. 15/11/2022, The Basics of
-Statistical Testing</h3>
+<h3 id="the-basics-of-statistical-testing">6. 15/11/2022, The Basics of Statistical Testing</h3>
 <ul>
 <li><a href="slides/Week-7-NHST-two-means.html">Slides</a></li>
 <li><a href="slides/Week-7-NHST-two-means.pdf">PDF</a></li>
 </ul>
-<h3 id="correlation-and-regression">7. 22/11/2022, Correlation and
-Regression</h3>
+<h3 id="correlation-and-regression">7. 22/11/2022, Correlation and Regression</h3>
 <ul>
 <li><a href="slides/Week-8-Correlation-Regression.html">Slides</a></li>
 <li><a href="slides/Week-8-Correlation-Regression.pdf">PDF</a></li>
 </ul>
-<h3 id="multiple-regression-and-anova">8. 29/11/2022, Multiple
-Regression and ANOVA</h3>
+<h3 id="multiple-regression-and-anova">8. 29/11/2022, Multiple Regression and ANOVA</h3>
 <ul>
 <li><a href="slides/Week-9-Multi-Regression-ANOVA.html">Slides</a></li>
 <li><a href="slides/Week-9-Multi-Regression-ANOVA.pdf">PDF</a></li>
 </ul>
-<h3 id="repeated-measures-and-factorial-anova">9. 06/12/2022, Repeated
-Measures and Factorial ANOVA</h3>
+<h3 id="repeated-measures-and-factorial-anova">9. 06/12/2022, Repeated Measures and Factorial ANOVA</h3>
 <ul>
-<li><a
-href="slides/Week-10-Repeated-and-Factorial-ANOVA.html">Slides</a></li>
-<li><a
-href="slides/Week-10-Repeated-and-Factorial-ANOVA.pdf">PDF</a></li>
+<li><a href="slides/Week-10-Repeated-and-Factorial-ANOVA.html">Slides</a></li>
+<li><a href="slides/Week-10-Repeated-and-Factorial-ANOVA.pdf">PDF</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
