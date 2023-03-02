@@ -1,7 +1,7 @@
 ---
 title: "Getting back into R - and how to handle messy data"
 subtitle: "Advanced Research Methods and Skills"
-date: "2022/03/22"
+date: "2023/02/28"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -34,6 +34,30 @@ library(afex)
 crime <- read_csv("data/crime.csv")
 ```
 
+# Attendance Code
+
+Please use this code: **160057** to register your attendance. 
+
+---
+# Introductions
+
+.pull-left[
+| Dr. Sarah Sauve |
+|------------------------------|
+| ![A photograph of Dr. Sarah Sauve](images/01/Sarah.jpg) |
+|Sarah Swift Building Room 4227|
+|ssauve@lincoln.ac.uk       |
+|Office hours: Tues 12-2     |
+]
+.pull-right[
+| Dr. Peter Clark |
+|------------------------------|
+| ![A photograph of Dr Peter Clark](images/01/Peter.jpg) |
+|Sarah Swift Building Room 3211|
+|pclark@lincoln.ac.uk       |
+|Office hours: Thurs 10-11   |
+]
+---
 # Topics previously covered
 
 - Data visualization
@@ -826,6 +850,17 @@ For example, counts can be modelled using Poisson regression, and categorical ou
 *Multilevel* or *mixed*-models can handle all of these things and much more besides; they are perfectly capable of handling missing data.
 
 We'll cover both logistic regression and multilevel models later in the course!
+
+---
+# Real-life example
+
+Data collected as part of a Newfoundland Symphony Orchestra Concert to study memory for new music as a function of age and familiarity (tonal/atonal, familiar, unfamiliar).
+
+1. Clicker data
+2. Questionnaire (contains age information)
+3. Cognitive tests
+
+How would you address the missing data?
 
 ---
 # Next week
