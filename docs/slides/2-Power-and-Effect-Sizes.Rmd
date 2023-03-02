@@ -1,6 +1,6 @@
 ---
 title: "Power and effect sizes"
-date: "2022/03/29"
+date: "2023/03/07"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]

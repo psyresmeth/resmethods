@@ -14,7 +14,7 @@
       "description": "Data manipulation, research methods, and statistics in Psychology\n",
       "author": [],
       "contents": "\r\nThis is the homepage for the R-based sections of the University of Lincoln’s MSc programmes in Developmental Psychology, Research Methods in Psychology, and Forensic Psychology.\r\nSemester A - PSY9251M/PSY9219M\r\nResearch Methods in Psychology/Research Methods and Skills\r\nModule co-ordinator: Tochukwu Onwuegbusi\r\nStaff:\r\nTochukwu Onwuegbusi\r\nCharlotte Cartledge\r\nAva Horowitz\r\nPatrick Hylton\r\nSemester B - PSY9250M/PSY9003\r\nAdvanced Research Methods in Psychology/Advanced Research Methods and Skills\r\nModule co-ordinator: Dr Peter Clark\r\nStaff:\r\nSarah Sauve\r\nTochukwu Onwuegbusi\r\nMichael Mireku\r\nGetting set up for the course\r\nFor both Semester A and Semester B modules, we expect you to download and install R and RStudio. You will need the following:\r\nA recent version of R, download from here.\r\nA recent version of RStudio, download from here\r\nYou’ll find a fantastic video guide to installing R and RStudio by Danielle Navarro over on YouTube\r\nAnother possibility is RStudio.cloud, a web-based version of RStudio accessible from anywhere using a web-browser such as Chrome. For many parts of the course, the 25 hours free monthly access will be sufficient. However, you may find that during assessment times this isn’t adequate for your needs.\r\n\r\n\r\n\r\n",
-      "last_modified": "2023-03-02T13:42:36+00:00"
+      "last_modified": "2023-03-02T13:44:37+00:00"
     },
     {
       "path": "LICENSE.html",
