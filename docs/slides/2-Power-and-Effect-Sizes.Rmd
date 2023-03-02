@@ -94,6 +94,46 @@ If the p-value falls **above** this threshold, we say we have a *non-significant
 (both these reactions are a little bit over-the-top)
 
 ---
+
+.pull-left[
+In other words, assuming the null hypothesis is true (no difference): out of 1000s of samples, each with a distribution, mean and statistic, our sample is only one. If it is a sample with a mean and statistic in the 5% of the tails of the distribution of all samples, then our result is considered significant.
+]
+
+.pull-right[
+```{r, echo = FALSE, message = FALSE}
+samples <- rnorm(5000)
+hist(samples)
+```
+]
+
+---
+# Another way to look at it
+
+.pull-left[
+Your sample may be extreme *assuming the null hypothesis is true*, but it might be perfectly average *assuming the null hypothesis is false*.
+]
+
+.pull-right[
+```{r, echo = FALSE, msesage = FALSE, fig.height=6}
+set.seed(1234)
+df <- data.frame(
+  group=factor(rep(c("no difference", "difference"), each=5000)),
+  sample_mean=c(rnorm(5000, mean=1, sd=0.7), rnorm(5000, mean=2.5, sd=0.7))
+)
+
+ggplot(df, aes(x = sample_mean, color = group, fill = group)) +
+  geom_histogram(aes(y=..density..), position="identity", alpha=0.5)+
+  geom_density(alpha=0.6)+
+  geom_vline(xintercept = 2.9, color = "red", linetype = "dashed") +
+  scale_color_manual(values=c("#999999", "#E69F00", "#56B4E9"))+
+  scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9"))+
+  theme_classic()
+
+```
+]
+
+
+---
 # Type I and Type II errors
 
 Under NHST, we are trying to decide whether our statistical results match reality. There are **two** basic types of error we can make. 
@@ -731,8 +771,7 @@ Perugini, M., Gallucci, M., & Costantini, G. (2018). A Practical Primer To Power
 ---
 # Next session
 
-We'll be skipping two weeks for **Easter!**
 
-The following week, we'll be returning to **Multiple regression** and looking at **logistic regression and Generalized linear models.** Since the University is closed on Tuesday 19th April, a pre-recorded video will be provided for that week.
+Next week, the topic is **Multiple regression** and looking at **logistic regression and Generalized linear models.** 
 
-Chapter 8 of Field et al, Discovering Statistics Using R.
+Chapter 8 of Field et al., Discovering Statistics Using R.
