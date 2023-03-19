@@ -1,6 +1,6 @@
 ---
 title: "Moderation and Mediation"
-date: "2022/05/03"
+date: "2023/03/28"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -541,38 +541,3 @@ model <- ' # direct effect
          '
 fit <- sem(model, data = Data)
 ```
-
----
-# Additional packages
-
-The `medmod` package can handle simple models, and has some nice, readable output.
-
-```{r}
-library(medmod)
-med_model <- med(data = estress, dep = "withdraw",
-                 pred = "estress", med = "affect",
-                 paths = TRUE, estPlot = TRUE,
-                 pm = TRUE)
-med_model$med
-```
-
----
-# Mediation with `med()` from `medmod`
-
-```{r}
-med_model$paths
-```
-
-PS this output looks better direct from R...!
-
----
-# Mediation with `med()` from `medmod`
-
-.pull-left[
-```{r message = FALSE, fig.height = 5}
-med_model$estPlot
-```
-]
-.pull-right[
-As long as the confidence intervals don't overlap 0 for the indirect effect, we have a significant mediation.
-]
