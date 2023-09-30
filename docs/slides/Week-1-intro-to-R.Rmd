@@ -47,7 +47,6 @@ style_mono_light(base_color = "#23395b",
 ]
 
 ---
-# Attendance Code: **449685**
 
 # Group A (PSY9219M) Skills Audit
 .large[
@@ -60,8 +59,6 @@ All answers given are anonymous and are used to reflect on your statistical and 
 ]
 
 ---
-
-# Attendance Code: **380827**
 
 # Group B (PSY9251M) Skills Audit
 .large[
@@ -174,7 +171,7 @@ Where possible you'll be provided with a set of pre-recorded videos each week in
 
 Most weeks you will be provided with some exercises to work on and complete formative assignment. The aim of the formative stage of the assignment is to enable you to produce an outline of your proposed summative for feedback from the module team.
 
-In the timetabled (lecture) sessions we will spend the first hour going over the topc for that week. In the second hour (workshop), you can spend the time working together on the exercises, and we'll be available to help out. You will finish up with a formative assignment for that week and receive a formative feedback.
+In the timetabled sessions, we will spend the first hour (lecture) going over the topic for that week. In the second hour (workshop), you can spend the time working together on the exercises, and we'll be available to help out. You will finish up with a formative assignment for that week and receive a formative feedback before the next teaching session.
 
 If you get stuck **ask us**!]
 
@@ -569,6 +566,23 @@ library(cowsay)
 But **another** way to install is using the GUI!
 
 ---
+# Still on Packages
+
+--
+.pull-left[
+![organisational structure](images/01/Package_examp1.png)
+]
+
+--
+.pull-right[
+![Organogram showing packages"](images/01/Package_examp2.png)
+]
+
+The image on the left is an example organisational structure of Tochs and Charlotte Plc. The second layer shows different departmental heads and their responsibilities on the third layer. If you need a query about salary, you go to the Finance manager rather than Marketing Manager. If the finance department fail to release salary, workers won't get paid. 
+
+In R, packages follow the same principle. You can't write a code to plot a barchart without first installing and loading ggplot2 package. Certain functions in R are executed using relevant packages. Image on the right shows example packages used in R and what they are use for. 
+
+---
 background-image: url(images/00/cloud-packages.png)
 background-size: contain
 class: inverse
@@ -584,7 +598,7 @@ background-position: 90% 85%
 background-size: 40%
 # Let's try out the **cowsay** package
 
-**cowsay** adds a function called **say()**. Load the function in as follows, and look at the help for **say()**.
+**cowsay** adds a function called **say()**. Load the package in as follows, and look at the help for **say()**.
 ```{r echo = FALSE}
 library(cowsay)
 ```
