@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R, part 2"
 subtitle: "Research Methods and Skills"
-date: "11/10/2022"
+date: "10/10/2023"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -39,7 +39,7 @@ style_mono_light(base_color = "#23395b",
     * Type stuff in, it tries to do it
 ]
 .right-pull[
-![:scale 60%](images/01/default_project.png)
+![:scale 60%](images/00/default_project.png)
 ]
 
 ---
@@ -145,37 +145,37 @@ class: inverse, center, middle
 # Let's create a script!
 
 ---
-background-image: url(images/02/cloud_blank.png)
+background-image: url(images/00/studio_blank.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-create-script.png)
+background-image: url(images/00/studio-create-script.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-script-window.png)
+background-image: url(images/00/studio-script-window.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-examp-script.png)
+background-image: url(images/00/studio-examp-script.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-script-run.png)
+background-image: url(images/00/studio-script-run.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-script-source.png)
+background-image: url(images/00/studio-script-source.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-sourced-script.png)
+background-image: url(images/00/studio-sourced-script.png)
 background-size: contain
 class: inverse
 
@@ -202,47 +202,47 @@ This allows you to create elaborate documents following the structure *you* want
 ]
 
 ---
-background-image: url(images/02/cloud-rmarkdown.png)
+background-image: url(images/00/cloud-rmarkdown.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmarkdown-install.png)
+background-image: url(images/00/cloud-rmarkdown-install.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmarkdown-new.png)
+background-image: url(images/00/cloud-rmarkdown-new.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-example.png)
+background-image: url(images/00/cloud-rmd-example.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-chunk-lab.png)
+background-image: url(images/00/cloud-rmd-chunk-lab.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-click-run.png)
+background-image: url(images/00/cloud-rmd-click-run.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-chunk-play.png)
+background-image: url(images/00/cloud-rmd-chunk-play.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-click-knit.png)
+background-image: url(images/00/cloud-rmd-click-knit.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/02/cloud-rmd-html-file.png)
+background-image: url(images/00/cloud-rmd-html-file.png)
 background-size: contain
 class: inverse
 
