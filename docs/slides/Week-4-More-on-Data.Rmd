@@ -1,7 +1,7 @@
 ---
 title: "The structure of data"
 subtitle: "Research Methods and Skills"
-date: "25/10/2022"
+date: "17/10/2023"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -69,7 +69,7 @@ ggplot(test_data,
 ```
 
 ---
-background-image: url(images/02/cloud-rmd-example.png)
+background-image: url(images/00/cloud-rmd-example.png)
 background-position: 65% 85% 
 background-size: 46%
 # RMarkdown
@@ -313,32 +313,32 @@ FearofCrime
 ```
 
 ---
-background-image: url(images/05/import-data-button.png)
+background-image: url(images/00/import-data-button.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-text-dialog.png)
+background-image: url(images/00/import-text-dialog.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-text-browse.png)
+background-image: url(images/00/import-text-browse.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-text-url.png)
+background-image: url(images/00/import-text-url.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-text-code-prev.png)
+background-image: url(images/00/import-text-code-prev.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-foc.png)
+background-image: url(images/00/import-foc.png)
 background-size: contain
 class: inverse
 
