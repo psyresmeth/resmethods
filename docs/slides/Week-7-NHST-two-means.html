@@ -3,6 +3,7 @@
   <head>
     <title>The basics of statistical testing</title>
     <meta charset="utf-8" />
+    <meta name="date" content="2023-07-11" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -22,7 +23,7 @@ class: center, middle, inverse, title-slide
 # The basics of statistical testing
 ]
 .date[
-### 15/11/2022
+### 07/11/2023
 ]
 
 ---
@@ -67,7 +68,6 @@ crime
 ## 10 R_12i26Q… male     20 no        2.4   2.1   1.8   2.2   3.4   2.9  2.15  2.4 
 ## # … with 291 more rows, 3 more variables: OHQ &lt;dbl&gt;, FoC &lt;dbl&gt;, Foc2 &lt;dbl&gt;, and
 ## #   abbreviated variable names ¹​Participant, ²​victim_crime
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 
@@ -77,6 +77,13 @@ crime
 
 ```r
 library(readxl)
+```
+
+```
+## Warning: package 'readxl' was built under R version 4.2.2
+```
+
+```r
 prison_pop &lt;- read_excel("data/prison-population-data-tool-31-december-2017.xlsx",
                          sheet = "PT Data")
 filter(prison_pop,
@@ -273,7 +280,6 @@ select(crime, sex, victim_crime, FoC)
 ##  9 female yes            3.4
 ## 10 male   no             1.4
 ## # … with 291 more rows
-## # ℹ Use `print(n = ...)` to see more rows
 ```
 ]
 
@@ -529,7 +535,6 @@ crossmod
 ##  9           5 DS    3486.
 ## 10           5 SS    2844.
 ## # … with 38 more rows
-## # ℹ Use `print(n = ...)` to see more rows
 ```
 ]
 
@@ -810,7 +815,7 @@ This one is easy to assess: we know from the design whether the data is independ
 .pull-right[
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 ![](Week-7-NHST-two-means_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
@@ -901,8 +906,8 @@ crime %&gt;%
 ---
 # Reporting the results of a *t*-test
 
-"On average, participants who had been victims of crime did not have significantly higher Fear of Crime (*M* = 2.41, *SE* = .10) than participants who had not (*M* = 2.46, *SE* = .07), 
-*t*(197.48) = .453, *p* = .7."
+"An independent sample *t*-test was conducted to test whether being victims (or not) victims of crime affect fear of crime. On average, participants who had been victims of crime did not have significantly higher Fear of Crime (*M* = 2.41, *SE* = .10) than participants who had not (*M* = 2.46, *SE* = .07), 
+*t*(197.48) = .453, *p* = .651."
 
 Means and standard errors are typically reported to two decimal places.
 
@@ -910,9 +915,9 @@ Means and standard errors are typically reported to two decimal places.
 
 Exact *p-values* should be reported down to three decimal places; if the p-value is below .001, report "*p* &lt; .001".
 
-Remember to specify, *somewhere*, what type of *t*-test you used.
+Remember to always specify, *somewhere*, what type of *t*-test you used.
 
-(for further guidance, see Field et al, Discovering statistics using R)
+(for further guidance, see Field et al., Discovering statistics using R)
 
 ---
 # A plotting suggestion

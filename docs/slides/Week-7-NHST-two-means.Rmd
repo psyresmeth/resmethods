@@ -1,6 +1,6 @@
 ---
 title: "The basics of statistical testing"
-date: "15/11/2022"
+date: "07/11/2023"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -700,8 +700,8 @@ crime %>%
 ---
 # Reporting the results of a *t*-test
 
-"On average, participants who had been victims of crime did not have significantly higher Fear of Crime (*M* = 2.41, *SE* = .10) than participants who had not (*M* = 2.46, *SE* = .07), 
-*t*(197.48) = .453, *p* = .7."
+"An independent sample *t*-test was conducted to test whether being victims (or not) victims of crime affect fear of crime. On average, participants who had been victims of crime did not have significantly higher Fear of Crime (*M* = 2.41, *SE* = .10) than participants who had not (*M* = 2.46, *SE* = .07), 
+*t*(197.48) = .453, *p* = .651."
 
 Means and standard errors are typically reported to two decimal places.
 
@@ -709,9 +709,9 @@ Means and standard errors are typically reported to two decimal places.
 
 Exact *p-values* should be reported down to three decimal places; if the p-value is below .001, report "*p* < .001".
 
-Remember to specify, *somewhere*, what type of *t*-test you used.
+Remember to always specify, *somewhere*, what type of *t*-test you used.
 
-(for further guidance, see Field et al, Discovering statistics using R)
+(for further guidance, see Field et al., Discovering statistics using R)
 
 ---
 # A plotting suggestion
