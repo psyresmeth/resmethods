@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 # Correlation and regression
 ]
 .date[
-### 22/11/2022
+### 14/11/2023
 ]
 
 ---
@@ -117,7 +117,6 @@ head(crime)
 ## 6 R_0wioqGE… fema…    20 no        2.6   2.6   3     2.6   2.9   3.4  2.55  1.5 
 ## # … with 3 more variables: OHQ &lt;dbl&gt;, FoC &lt;dbl&gt;, Foc2 &lt;dbl&gt;, and abbreviated
 ## #   variable names ¹​Participant, ²​victim_crime
-## # ℹ Use `colnames()` to see all variable names
 ```
 
 ---
@@ -259,7 +258,7 @@ cor(crime$E, crime$FoC)
 .pull-right[
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
 ![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
@@ -291,15 +290,58 @@ cor.test(crime$E, crime$FoC,
 ```
 
 ---
+# Running multiple correlation using the psych package 
+
+.pull-left[
+Unfortunately, `cor.test()` won't work on multiple variables at once! 
+
+A nice way to run multiple correlations at once, and get significance values, is using the `pairs.panels()` function from the `psych` package.
+
+
+
+```r
+crime_corr &lt;- select(crime, FoC, H, E, age)
+```
+
+]
+.pull-right[
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+]
+
+---
+# Running multiple correlation using the apaTables package 
+
+.pull-left[
+You can use ‘apa.cor.table’ function from the apaTables package to create a nicely formatted APA table showing the means, standard deviation, and correlation with confidence intervals.
+
+
+
+```r
+crime_corr2 &lt;- select(crime, FoC, H, E, X, A, C, O)
+```
+
+
+```r
+apa.cor.table (crime_corr2, filename = "Correlation_Table.doc", table.number = 1, show.conf.interval = TRUE, landscape=TRUE)
+```
+]
+
+.pull-right[
+![:scale 90%](images/00/apa-corr-table.png)
+]
+
+
+---
 # Curved or non-linear relationships
 
 If your data look like this:
 
 .pull-left[
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
 ]
 .pull-right[
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 ]
 ...forget about correlation.
 
@@ -307,7 +349,7 @@ If your data look like this:
 # Curved or non-linear relationships
 .pull-left[
 ...but if your data look like this:
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
 ...there is some hope!
 ]
 .pull-right[
@@ -326,11 +368,11 @@ cor.test(X, Y,
 ## 	Spearman's rank correlation rho
 ## 
 ## data:  X and Y
-*## S = 20780, p-value &lt; 2.2e-16
+*## S = 22610, p-value &lt; 2.2e-16
 ## alternative hypothesis: true rho is not equal to 0
 ## sample estimates:
 ##       rho 
-*## 0.8753075
+*## 0.8643264
 ```
 
 ]
@@ -347,11 +389,11 @@ background-position: 50% 70%
 # Reporting a correlation
 
 .large[
-Reporting a correlation is pretty straightforward. Only the correlation coefficient and p-value are typically required. e.g. 
+Reporting a correlation is pretty straightforward. Typically, the degrees of freedom or number of observations should also be given, e.g. *r*(299) = .37, *p* &lt; .001, or *r* = .37, *p* &lt; .001, *N* = 301. 
 
-"There was a significant positive correlation between emotionality and fear of crime, *r* = .37, *p* &lt; .001."
+With degrees of freedom in bracket, "There was a significant weak positive correlation between emotionality and fear of crime, *r*(299) = .37, *p* &lt; .001." OR With number of observations written out, "There was a significant weak positive correlation between emotionality and fear of crime, *r* = .37, *p* &lt; .001, *N* = 301." 
 
-However, it's best to also specify which type of correlation you used (e.g. Pearson's or Spearman's); and a scatterplot showing the relationship should almost always be shown. Typically, the degrees of freedom or number of observations should also be given, e.g. *r*(299) = .37, *p* &lt; .001, or *r* = .37, *p* &lt; .001, *N* = 301.
+It is best to also specify which type of correlation you used (e.g. Pearson's or Spearman's); the strength of the relationship (i.e., weak or strong) and a scatterplot showing the relationship should almost always be shown. 
 
 Note that *r* is considered a measure of *effect size*. An *r* of .1 is considered a small effect, while an *r* of .8 is considered a large effect.
 ]
@@ -382,7 +424,7 @@ ggplot(crime,
 ```
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 ]
 .pull-right[
@@ -415,6 +457,8 @@ The prediction is made using the following formula:
 `\(y = a + bX\)`
 
 *a* is the *intercept* - the point where the line would cross the y-axis when the value of the x-axis is 0.
+
+*y* is the dependent or outcome variable we are predicting.
 
 *b* is the *slope* - the steepness and direction of the line.
 
@@ -449,10 +493,10 @@ These are the *intercept* and *slope* of the regression line on the right.
 .pull-right[
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -506,7 +550,7 @@ The significance of each predictor is tested using a t-test; *t value* is the t 
 
 Thus, *Emotionality* is a significant predictor of *Fear of Crime*. 
 
-Since its coefficient is positive, Fear of Crime increases as Emotionality increases. 
+Since its coefficient (0.547) is positive, Fear of Crime increases as Emotionality increases. 
 
 ---
 # Fear of crime predicted by emotionality
@@ -525,10 +569,10 @@ The coefficient for the predictor is the amount that `\(y\)` increases for each 
 .pull-right[
 
 ```
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 ```
 
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -599,7 +643,7 @@ mean(crime$FoC)
 In the formula `\(y = a + bX\)`, *a* is the *Intercept*.
 
 So our prediction for the value of *y* is `\(y = 2.44\)`.
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -692,7 +736,7 @@ class: inverse, center, middle
 # Assessing model fit
 
 ---
-# How much does Y does X explain?
+# How much Y does X explain?
 
 
 ```r
@@ -733,7 +777,7 @@ After linear regression, we look at how much reality differs from the model pred
 ]
 ]
 .pull-right[
-![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
 ]
 
 ---
