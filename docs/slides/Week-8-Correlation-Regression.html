@@ -96,6 +96,19 @@ Correlation measures the strength and direction of an association between two co
 ]
 
 ---
+# Correlation Coefficient
+
+The sign **(+ or -)** tells you the direction of the relationship. 
+
+The number **(between 0 and 1)** tells you the strength of the relationship.
+
+We calculate a coefficient between -1 and +1. The closer the value is to 1 (+or-), the stronger the relationship.
+
+.center[
+![:scale 90%](images/00/corr-direction.png)
+
+]
+---
 # Correlation
 
 How related are the variables in the Fear of Crime dataset?
@@ -211,7 +224,7 @@ The line across the middle shows the mean, which is **2.22**.
 
 Now let's look at these previous two plots as differences from their respective means.
 
-What we want to now is to what extent the values *vary together*. I.e. as one goes up, does the other? 
+What we want to see now is to what extent the values *vary together*. I.e. as one goes up, does the other? 
 
 This is *covariance*.
 
@@ -305,6 +318,11 @@ crime_corr &lt;- select(crime, FoC, H, E, age)
 
 ]
 .pull-right[
+
+```r
+pairs.panels(crime_corr)
+```
+
 ![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
 
 ]
@@ -368,11 +386,11 @@ cor.test(X, Y,
 ## 	Spearman's rank correlation rho
 ## 
 ## data:  X and Y
-*## S = 22610, p-value &lt; 2.2e-16
+*## S = 27168, p-value &lt; 2.2e-16
 ## alternative hypothesis: true rho is not equal to 0
 ## sample estimates:
 ##       rho 
-*## 0.8643264
+*## 0.8369757
 ```
 
 ]

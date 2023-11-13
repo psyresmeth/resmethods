@@ -102,6 +102,19 @@ ggplot(corr_examps, aes(x = X, y = Y)) +
 ]
 
 ---
+# Correlation Coefficient
+
+The sign **(+ or -)** tells you the direction of the relationship. 
+
+The number **(between 0 and 1)** tells you the strength of the relationship.
+
+We calculate a coefficient between -1 and +1. The closer the value is to 1 (+or-), the stronger the relationship.
+
+.center[
+![:scale 90%](images/00/corr-direction.png)
+
+]
+---
 # Correlation
 
 How related are the variables in the Fear of Crime dataset?
@@ -242,7 +255,7 @@ ggplot(tmp_dat,
 
 Now let's look at these previous two plots as differences from their respective means.
 
-What we want to now is to what extent the values *vary together*. I.e. as one goes up, does the other? 
+What we want to see now is to what extent the values *vary together*. I.e. as one goes up, does the other? 
 
 This is *covariance*.
 
@@ -338,7 +351,7 @@ crime_corr <- select(crime, FoC, H, E, age)
 
 ]
 .pull-right[
-```{r fig.height = 5, echo = FALSE}
+```{r fig.height = 5, echo = TRUE}
 pairs.panels(crime_corr)
 ```
 
