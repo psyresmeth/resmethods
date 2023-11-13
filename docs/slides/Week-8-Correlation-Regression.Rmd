@@ -352,7 +352,7 @@ crime_corr <- select(crime, FoC, H, E, age)
 ]
 .pull-right[
 ```{r fig.height = 5, echo = TRUE}
-pairs.panels(crime_corr)
+pairs.panels(crime_corr, stars = TRUE)
 ```
 
 ]
@@ -371,6 +371,8 @@ crime_corr2 <- select(crime, FoC, H, E, X, A, C, O)
 ```{r fig.height = 5, eval = FALSE}
 apa.cor.table (crime_corr2, filename = "Correlation_Table.doc", table.number = 1, show.conf.interval = TRUE, landscape=TRUE)
 ```
+The correlation table is created as a word document and saved in your working directory.
+
 ]
 
 .pull-right[

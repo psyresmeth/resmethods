@@ -320,7 +320,7 @@ crime_corr &lt;- select(crime, FoC, H, E, age)
 .pull-right[
 
 ```r
-pairs.panels(crime_corr)
+pairs.panels(crime_corr, stars = TRUE)
 ```
 
 ![](Week-8-Correlation-Regression_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
@@ -343,6 +343,8 @@ crime_corr2 &lt;- select(crime, FoC, H, E, X, A, C, O)
 ```r
 apa.cor.table (crime_corr2, filename = "Correlation_Table.doc", table.number = 1, show.conf.interval = TRUE, landscape=TRUE)
 ```
+The correlation table is created as a word document and saved in your working directory.
+
 ]
 
 .pull-right[
@@ -386,11 +388,11 @@ cor.test(X, Y,
 ## 	Spearman's rank correlation rho
 ## 
 ## data:  X and Y
-*## S = 27168, p-value &lt; 2.2e-16
+*## S = 23704, p-value &lt; 2.2e-16
 ## alternative hypothesis: true rho is not equal to 0
 ## sample estimates:
 ##       rho 
-*## 0.8369757
+*## 0.8577618
 ```
 
 ]
