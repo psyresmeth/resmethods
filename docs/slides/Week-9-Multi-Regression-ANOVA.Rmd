@@ -1,6 +1,6 @@
 ---
 title: "Multiple predictors and multiple means"
-date: "29/11/2022"
+date: "21/11/2023"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
@@ -412,7 +412,7 @@ How do we decide which are important and which to include?
 
 - *Theory-driven* methods, which can include:
   - Including predictors you have *manipulated* (e.g. in an experiment)
-  - Including predictors that are capture the 
+  - Including predictors that are captured in the data 
   - Including predictors that are known to influence the dependent variable
 
 - *Data-driven* methods, which can include:
@@ -515,13 +515,17 @@ plot(check_collinearity(full_model))
 ]
 
 ---
+class: center, middle, inverse
+# Reporting multiple regression
+
+---
 # Reporting results
 
 ```{r}
 tab_model(full_model, show.std = TRUE)
 ```
 
-Tables can be particularly useful with multiple regression - especially with a lot of predictors. 
+Results are reported in the same way you report simple linear regression. You only need to add a sentence reporting coefficient of each predictor. In addition, Tables can be particularly useful with multiple regression - especially with a lot of predictors. 
 
 ---
 class: inverse, middle, center
@@ -760,7 +764,7 @@ means_noise <- emmeans(noise_aov, ~noise)
 means_noise
 ```
 
-It looks like performance was best is when there was no noise, with the worst performance when there was loud noise.
+It looks like performance was best when there was no noise, with the worst performance when there was loud noise.
 
 ---
 # Follow-up contrasts
@@ -817,6 +821,17 @@ Each observation should be independent - i.e. there should be no repeated measur
 Each participant is in one group and one group only, and contributes one data point to that group.
 
 
+
+---
+class: center, middle, inverse
+# Reporting One-way ANOVA
+
+---
+# Example of reporting a 1-way ANOVA
+
+.large[
+"A one-way between subject anova was conducted to examine the effects noise on performance. There was a significant main effect of noise conditions on performance, *F*(2, 147) = 134.56, *p* < .001, $\eta^2$ = .647. A follow-up post-hoc analysis using Tukey HSD shows that performance was best when there was no noise (*M*= 7.91, *SE*=.13) with the worst performance when there was loud (*M*= 4.94, *SE*=.13) and then quiet (*M*= 6.96, *SE*=.13) noise (all *ps* $\le$ .001)."
+]
 
 ---
 # Next week
