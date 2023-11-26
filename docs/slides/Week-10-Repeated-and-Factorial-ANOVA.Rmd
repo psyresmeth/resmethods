@@ -1,6 +1,6 @@
 ---
 title: "Repeated measures and factorial ANOVA"
-date: "06/12/2022"
+date: "28/11/2023"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "xaringan-themer.css", "css/my-theme.css"]
