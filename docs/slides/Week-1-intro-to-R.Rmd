@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 subtitle: "Research Methods and Skills"
-date: "03/10/2023"
+date: "01/10/2024"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts",  "xaringan-themer.css", "css/my-theme.css"]
@@ -34,7 +34,7 @@ style_mono_light(base_color = "#23395b",
 .pull-left[
 | Dr Tochukwu Onwuegbusi |
 |------------------------------|
-| ![A photograph of Dr Tochukwu Onwuegbusi](images/01/tochs.jpg) |
+| ![A photograph of Dr Tochukwu Onwuegbusi](images/01/tochs3.jpg) |
 |Sarah Swift Building Room 2211|
 |tonwuegbusi@lincoln.ac.uk       |
 ]
@@ -54,7 +54,7 @@ We would like to invite you to complete the Research Method Skill Audit? This sh
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/2Gq7ivhvVS](https://forms.office.com/e/2Gq7ivhvVS) 
+[https://forms.office.com/e/Bdt3ZE59Fi](https://forms.office.com/e/Bdt3ZE59Fi) 
 
 ]
 
@@ -66,7 +66,7 @@ We would like to invite you to complete the Research Method Skill Audit? This sh
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/HBCxEwnAyP](https://forms.office.com/e/HBCxEwnAyP) 
+[https://forms.office.com/e/Bdt3ZE59Fi](https://forms.office.com/e/Bdt3ZE59Fi) 
 
 ]
 
@@ -161,6 +161,32 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 ### Weeks 6-10
 ![Discovering Statistics Using R](images/01/DiscoverR.jpg)
 ]
+
+---
+# Semester B - Advanced Research Methods and Skills (Course outline)
+.pull-left[
+### Weeks 19-23
+- Module Intro/Approaches to knowledge
+- Generalisability and Open Science
+- Systematic Literature Review
+- Qual 1: Reflexivity/Intersectionality/Thematic analysis
+- Qual 2: Thematic/Narrative analysis
+]
+
+.pull-right[
+### Weeks 24-29
+- ANOVA/Linear Regression
+- Logistic Regression
+- Mixed effects regression
+- Factor Analysis
+- Handling large & messy datasets
+- Visualisation/Review/Assessment Q&A
+]
+
+### Weeks 30-33
+
+- Interpreting Results/Review/Assessment Q&A
+- Optional drop-in
 
 ---
 # How it's going to work
