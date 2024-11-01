@@ -23,7 +23,7 @@ class: center, middle, inverse, title-slide
 # Multiple predictors and multiple means
 ]
 .date[
-### 21/11/2023
+### 19/11/2024
 ]
 
 ---
@@ -411,7 +411,7 @@ tab_model(full_model, show.std = TRUE)
 &lt;table style="border-collapse:collapse; border:none;"&gt;
 &lt;tr&gt;
 &lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
-&lt;th colspan="5" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;read_ab&lt;/th&gt;
+&lt;th colspan="5" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;read ab&lt;/th&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
@@ -648,7 +648,7 @@ tab_model(full_model, show.std = TRUE)
 &lt;table style="border-collapse:collapse; border:none;"&gt;
 &lt;tr&gt;
 &lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
-&lt;th colspan="5" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;read_ab&lt;/th&gt;
+&lt;th colspan="5" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;read ab&lt;/th&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
@@ -792,16 +792,16 @@ noise_test
 ## # A tibble: 150 × 3
 ##    noise test_score participant
 ##    &lt;chr&gt;      &lt;dbl&gt;       &lt;int&gt;
-##  1 none        5.92           1
-##  2 none        5.67           2
-##  3 none        6.91           3
-##  4 none        7.56           4
-##  5 none        7.44           5
-##  6 none        9.53           6
-##  7 none        6.77           7
-##  8 none        6.70           8
-##  9 none        8.44           9
-## 10 none        7.01          10
+##  1 none        8.47           1
+##  2 none        8.12           2
+##  3 none        8.74           3
+##  4 none        7.11           4
+##  5 none        7.80           5
+##  6 none        8.88           6
+##  7 none        9.34           7
+##  8 none        9.40           8
+##  9 none        8.17           9
+## 10 none        8.05          10
 ## # … with 140 more rows
 ```
 ]
@@ -827,7 +827,7 @@ The simplest model of this data is to use the grand mean across all conditions.
 ]
 
 .pull-right[
-The grand mean test score is 6.76, shown by the black line.
+The grand mean test score is 6.64, shown by the black line.
 
 The total variability in our data is the sum of the squared differences from the grand mean - the Total Sum of Squares, `\(SS_t\)`.
 
@@ -933,7 +933,7 @@ noise_aov
 ## 
 ## Response: test_score
 ##   Effect     df  MSE          F  ges p.value
-*## 1  noise 2, 147 1.05 128.24 *** .636   &lt;.001
+*## 1  noise 2, 147 0.80 142.25 *** .659   &lt;.001
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '+' 0.1 ' ' 1
 ```
@@ -957,9 +957,9 @@ means_noise
 
 ```
 ##  noise emmean    SE  df lower.CL upper.CL
-##  loud    4.92 0.145 147     4.64     5.21
-##  none    8.08 0.145 147     7.79     8.37
-##  quiet   7.29 0.145 147     7.00     7.57
+##  loud    4.97 0.126 147     4.72     5.22
+##  none    7.90 0.126 147     7.65     8.15
+##  quiet   7.05 0.126 147     6.80     7.30
 ## 
 ## Confidence level used: 0.95
 ```
@@ -978,9 +978,9 @@ pairs(means_noise)
 
 ```
 ##  contrast     estimate    SE  df t.ratio p.value
-##  loud - none    -3.158 0.205 147 -15.393  &lt;.0001
-##  loud - quiet   -2.364 0.205 147 -11.524  &lt;.0001
-##  none - quiet    0.794 0.205 147   3.870  0.0005
+##  loud - none    -2.927 0.179 147 -16.386  &lt;.0001
+##  loud - quiet   -2.082 0.179 147 -11.655  &lt;.0001
+##  none - quiet    0.845 0.179 147   4.731  &lt;.0001
 ## 
 ## P value adjustment: tukey method for comparing a family of 3 estimates
 ```
