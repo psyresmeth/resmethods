@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 subtitle: "Research Methods and Skills"
-date: "01/10/2024"
+date: "07/10/2025"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts",  "xaringan-themer.css", "css/my-theme.css"]
@@ -35,7 +35,7 @@ style_mono_light(base_color = "#23395b",
 | Dr Tochukwu Onwuegbusi |
 |------------------------------|
 | ![A photograph of Dr Tochukwu Onwuegbusi](images/01/tochs3.jpg) |
-|Sarah Swift Building Room 2211|
+|Sarah Swift Building Room 4227|
 |tonwuegbusi@lincoln.ac.uk       |
 ]
 .pull-right[
