@@ -48,25 +48,25 @@ style_mono_light(base_color = "#23395b",
 
 ---
 
-# Group A (PSY9219M) Skills Audit
+# Group A (PSY9251M) Skills Audit
 .large[
 We would like to invite you to complete the Research Method Skill Audit? This should take no longer than 4 minutes. The audit is important as it helps us to tailor our teaching and support to meet your learning needs. 
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/Bdt3ZE59Fi](https://forms.office.com/e/Bdt3ZE59Fi) 
+[https://forms.office.com/e/BREmbSEPbL](https://forms.office.com/e/BREmbSEPbL) 
 
 ]
 
 ---
 
-# Group B (PSY9251M) Skills Audit
+# Group B (PSY9219M) Skills Audit
 .large[
 We would like to invite you to complete the Research Method Skill Audit? This should take no longer than 4 minutes. The audit is important as it helps us to tailor our teaching and support to meet your learning needs. 
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/Bdt3ZE59Fi](https://forms.office.com/e/Bdt3ZE59Fi) 
+[https://forms.office.com/e/BREmbSEPbL](https://forms.office.com/e/BREmbSEPbL) 
 
 ]
 
