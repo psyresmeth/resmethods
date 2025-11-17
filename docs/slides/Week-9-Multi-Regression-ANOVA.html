@@ -23,7 +23,7 @@ class: center, middle, inverse, title-slide
 # Multiple predictors and multiple means
 ]
 .date[
-### 19/11/2024
+### 25/11/2025
 ]
 
 ---
@@ -792,16 +792,16 @@ noise_test
 ## # A tibble: 150 × 3
 ##    noise test_score participant
 ##    &lt;chr&gt;      &lt;dbl&gt;       &lt;int&gt;
-##  1 none        8.47           1
-##  2 none        8.12           2
-##  3 none        8.74           3
-##  4 none        7.11           4
-##  5 none        7.80           5
-##  6 none        8.88           6
-##  7 none        9.34           7
-##  8 none        9.40           8
-##  9 none        8.17           9
-## 10 none        8.05          10
+##  1 none        9.45           1
+##  2 none        8.25           2
+##  3 none        6.92           3
+##  4 none        7.71           4
+##  5 none        6.78           5
+##  6 none        8.00           6
+##  7 none        8.24           7
+##  8 none        8.38           8
+##  9 none        8.09           9
+## 10 none        5.83          10
 ## # … with 140 more rows
 ```
 ]
@@ -827,7 +827,7 @@ The simplest model of this data is to use the grand mean across all conditions.
 ]
 
 .pull-right[
-The grand mean test score is 6.64, shown by the black line.
+The grand mean test score is 6.55, shown by the black line.
 
 The total variability in our data is the sum of the squared differences from the grand mean - the Total Sum of Squares, `\(SS_t\)`.
 
@@ -933,7 +933,7 @@ noise_aov
 ## 
 ## Response: test_score
 ##   Effect     df  MSE          F  ges p.value
-*## 1  noise 2, 147 0.80 142.25 *** .659   &lt;.001
+*## 1  noise 2, 147 0.93 129.24 *** .637   &lt;.001
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '+' 0.1 ' ' 1
 ```
@@ -957,9 +957,9 @@ means_noise
 
 ```
 ##  noise emmean    SE  df lower.CL upper.CL
-##  loud    4.97 0.126 147     4.72     5.22
-##  none    7.90 0.126 147     7.65     8.15
-##  quiet   7.05 0.126 147     6.80     7.30
+##  loud    4.80 0.136 147     4.54     5.07
+##  none    7.75 0.136 147     7.49     8.02
+##  quiet   7.10 0.136 147     6.83     7.37
 ## 
 ## Confidence level used: 0.95
 ```
@@ -978,9 +978,9 @@ pairs(means_noise)
 
 ```
 ##  contrast     estimate    SE  df t.ratio p.value
-##  loud - none    -2.927 0.179 147 -16.386  &lt;.0001
-##  loud - quiet   -2.082 0.179 147 -11.655  &lt;.0001
-##  none - quiet    0.845 0.179 147   4.731  &lt;.0001
+##  loud - none    -2.950 0.193 147 -15.310  &lt;.0001
+##  loud - quiet   -2.294 0.193 147 -11.904  &lt;.0001
+##  none - quiet    0.656 0.193 147   3.406  0.0024
 ## 
 ## P value adjustment: tukey method for comparing a family of 3 estimates
 ```
