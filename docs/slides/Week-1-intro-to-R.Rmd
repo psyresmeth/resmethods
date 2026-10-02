@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 subtitle: "Research Methods and Skills"
-date: "07/10/2025"
+date: "06/10/2026"
 output:
   xaringan::moon_reader:
     css: ["default", "default-fonts",  "xaringan-themer.css", "css/my-theme.css"]
@@ -39,11 +39,11 @@ style_mono_light(base_color = "#23395b",
 |tonwuegbusi@lincoln.ac.uk       |
 ]
 .pull-right[
-| Charlotte Cartledge |
+| Luke Galloway |
 |------------------------------|
-| ![A photograph of Charlotte Cartledge](images/01/charlotte.jfif) |
+| ![A photograph of Luke Galloway](images/01/Luke.png) |
 |Sarah Swift Building Room 4225|
-|ccartledge@lincoln.ac.uk       |
+|lgalloway@lincoln.ac.uk       |
 ]
 
 ---
@@ -54,7 +54,7 @@ We would like to invite you to complete the Research Method Skill Audit? This sh
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/BREmbSEPbL](https://forms.office.com/e/BREmbSEPbL) 
+[https://forms.cloud.microsoft/e/cZKwUPSfVm](https://forms.cloud.microsoft/e/cZKwUPSfVm) 
 
 ]
 
@@ -66,7 +66,7 @@ We would like to invite you to complete the Research Method Skill Audit? This sh
 
 All answers given are anonymous and are used to reflect on your statistical and programming skills, and for us to gauge what skills shortage need addressing so that we can help you to the best of our ability. Please use the link below to complete the short audit questionnaire! 
 
-[https://forms.office.com/e/BREmbSEPbL](https://forms.office.com/e/BREmbSEPbL) 
+[https://forms.cloud.microsoft/e/cZKwUPSfVm](https://forms.cloud.microsoft/e/cZKwUPSfVm) 
 
 ]
 
@@ -114,7 +114,7 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 ---
 # Course outline
 .pull-left[
-### Weeks 2-6
+### Weeks 2-7
 - Introduction to R
 - Basic R programming
 - Plotting with ggplot2
@@ -123,7 +123,7 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 ]
 
 .pull-right[
-### Weeks 7-10
+### Weeks 8-11
 - Hypothesis testing and estimation
 - *t*-tests and comparing two groups
 - Correlation and linear regression
@@ -131,7 +131,7 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 - Factorial ANOVA
 ]
 
-### Weeks 11-16
+### Weeks 12-16
 
 - Qualitative methods
 
@@ -139,7 +139,7 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 # Course outline
 
 .pull-left[
-### Weeks 2-6
+### Weeks 2-7
 ![A dog wearing a tie, sat at a computer, with the caption "How do I program"](images/01/dog-gramming.jpg)
 ]
 
@@ -153,12 +153,12 @@ You've been asked to design, implement, and evaluate a new treatment regime acro
 # Course outline
 
 .pull-left[
-### Weeks 2-6
+### Weeks 2-7
 ![:scale 45%](images/01/R4DS.png)
 ]
 
 .pull-right[
-### Weeks 6-10
+### Weeks 8-11
 ![Discovering Statistics Using R](images/01/DiscoverR.jpg)
 ]
 
@@ -223,7 +223,7 @@ R is a statistical, mathematical programming language
     * Can be downloaded from the [R-project](https://r-project.org) website
 
 * Continually evolving
-    * R has over 12,000 *packages* that add additional functions
+    * R has over 25,000 *packages* that add additional functions
 ]
 
 ---
@@ -241,7 +241,7 @@ background-image: url(images/01/Rcompanies.png)
 background-size: contain
 
 ---
-background-image: url(images/01/spss_usage.png)
+background-image: url(images/01/spss_usage3.png)
 
 # Still not convinced?
 
@@ -274,7 +274,7 @@ background-position: 50% 90%
 .large[
 1. Open up a web browser
 
-2. Go to https://rstudio.cloud
+2. Go to https://posit.cloud/
 
 3. Sign up! Use your REAL NAME, and your University of Lincoln email address.
 ]
@@ -596,17 +596,19 @@ But **another** way to install is using the GUI!
 
 --
 .pull-left[
-![organisational structure](images/01/Package_examp1.png)
+![organisational structure](images/01/Package 1.png)
 ]
 
 --
 .pull-right[
-![Organogram showing packages"](images/01/Package_examp2.png)
+![Organogram showing packages"](images/01/Package 2.png)
 ]
 
-The image on the left is an example organisational structure of Tochs and Charlotte Plc. The second layer shows different departmental heads and their responsibilities on the third layer. If you need a query about salary, you go to the Finance manager rather than Marketing Manager. If the finance department fail to release salary, workers won't get paid. 
+Top Level (Base R / CEO): Base R acts as the Chief Executive Officer overseeing the entire operation. It provides the core foundation and environment where everything runs.
 
-In R, packages follow the same principle. You can't write a code to plot a barchart without first installing and loading ggplot2 package. Certain functions in R are executed using relevant packages. Image on the right shows example packages used in R and what they are use for. 
+Second Layer (Departmental Managers/R Packages): The second layer shows the specialized managers: Ian (Marketing), and Dave (Finance). In R, these are your specialized packages—like readxl and ggplot2. Just as you wouldn't ask Ian in Marketing to handle salary queries, you wouldn't use readxl to build a bar chart.
+
+Third Layer (Responsibilities & Specific Functions): The third layer shows the specific responsibilities for each department. In R, these are your functions: To import Excel file, you load 'readxl' package and use 'read_excel()' function. 
 
 ---
 background-image: url(images/00/cloud-packages.png)
