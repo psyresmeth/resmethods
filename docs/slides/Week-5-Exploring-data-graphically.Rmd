@@ -112,7 +112,7 @@ datasauRus::datasaurus_dozen %>%
 
 Plotting helps you quickly gain an understanding of the structure of your data.
 
-Here's some recent data about the UK's prison population.
+Here's some data about the UK's prison population.
 
 ```{r echo = FALSE}
 pris_pop <- read_excel("data/prison-population-data-tool-31-december-2017.xlsx",
