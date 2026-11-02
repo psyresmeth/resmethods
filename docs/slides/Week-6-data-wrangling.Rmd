@@ -105,17 +105,17 @@ Note how the file name and location come first, and then I specify a specific *s
 Excel spreadsheets often have multiple sheets with different information.
 
 ---
-background-image: url(images/05/import-from-excel.png)
+background-image: url(images/05/import-from-excel2.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-from-excel-change.png)
+background-image: url(images/05/import-from-excel-change2.png)
 background-size: contain
 class: inverse
 
 ---
-background-image: url(images/05/import-from-excel-changed.png)
+background-image: url(images/05/import-from-excel-changed2.png)
 background-size: contain
 class: inverse
 
