@@ -3,6 +3,7 @@
   <head>
     <title>Multiple predictors and multiple means</title>
     <meta charset="utf-8" />
+    <meta name="date" content="2026-01-12" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -23,7 +24,7 @@ class: center, middle, inverse, title-slide
 # Multiple predictors and multiple means
 ]
 .date[
-### 25/11/2025
+### 01/12/2026
 ]
 
 ---
@@ -171,15 +172,15 @@ summary(simple_model)
 ## -1.8492 -0.5742  0.1536  0.5252  1.4998 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)   1.2356     0.7580   1.630    0.106    
-*## mem_span      1.2283     0.1826   6.726 1.17e-09 ***
+##             Estimate Std. Error t value      Pr(&gt;|t|)    
+## (Intercept)   1.2356     0.7580   1.630         0.106    
+*## mem_span      1.2283     0.1826   6.726 0.00000000117 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 0.7198 on 98 degrees of freedom
 ## Multiple R-squared:  0.3158,	Adjusted R-squared:  0.3089 
-*## F-statistic: 45.24 on 1 and 98 DF,  p-value: 1.172e-09
+*## F-statistic: 45.24 on 1 and 98 DF,  p-value: 0.000000001172
 ```
 
 
@@ -270,7 +271,7 @@ summary(full_model)
 ## 
 ## Residual standard error: 0.6703 on 96 degrees of freedom
 ## Multiple R-squared:  0.4189,	Adjusted R-squared:  0.4007 
-## F-statistic: 23.07 on 3 and 96 DF,  p-value: 2.503e-11
+## F-statistic: 23.07 on 3 and 96 DF,  p-value: 0.00000000002503
 ```
 
 ---
@@ -383,17 +384,17 @@ summary(lm(read_ab ~ mem_span + age + IQ,
 ## -1.52302 -0.58564  0.04177  0.57687  1.44768 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(&gt;|t|)   
-## (Intercept) -2.703e-16  7.741e-02   0.000  1.00000   
-## mem_span     2.948e-01  1.348e-01   2.187  0.03118 * 
-## age          4.043e-01  1.289e-01   3.136  0.00228 **
-## IQ          -6.795e-02  9.510e-02  -0.714  0.47666   
+##                           Estimate             Std. Error t value Pr(&gt;|t|)   
+## (Intercept) -0.0000000000000002703  0.0774134534295433940   0.000  1.00000   
+## mem_span     0.2947832051152371458  0.1347975587331672886   2.187  0.03118 * 
+## age          0.4042961843135690625  0.1289322444388188160   3.136  0.00228 **
+## IQ          -0.0679483724920518922  0.0951001113702359263  -0.714  0.47666   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 0.7741 on 96 degrees of freedom
 ## Multiple R-squared:  0.4189,	Adjusted R-squared:  0.4007 
-## F-statistic: 23.07 on 3 and 96 DF,  p-value: 2.503e-11
+## F-statistic: 23.07 on 3 and 96 DF,  p-value: 0.00000000002503
 ```
 
 ---
@@ -722,7 +723,7 @@ t.test(FoC ~ sex, data = crime, var.equal = TRUE)
 ## 	Two Sample t-test
 ## 
 ## data:  FoC by sex
-## t = 4.7664, df = 299, p-value = 2.932e-06
+## t = 4.7664, df = 299, p-value = 0.000002932
 ## alternative hypothesis: true difference in means between group female and group male is not equal to 0
 ## 95 percent confidence interval:
 ##  0.3753039 0.9031487
@@ -792,16 +793,16 @@ noise_test
 ## # A tibble: 150 × 3
 ##    noise test_score participant
 ##    &lt;chr&gt;      &lt;dbl&gt;       &lt;int&gt;
-##  1 none        9.45           1
-##  2 none        8.25           2
-##  3 none        6.92           3
-##  4 none        7.71           4
-##  5 none        6.78           5
-##  6 none        8.00           6
-##  7 none        8.24           7
-##  8 none        8.38           8
-##  9 none        8.09           9
-## 10 none        5.83          10
+##  1 none        6.12           1
+##  2 none        7.51           2
+##  3 none        7.42           3
+##  4 none        7.12           4
+##  5 none        8.21           5
+##  6 none        9.17           6
+##  7 none        9.08           7
+##  8 none        7.59           8
+##  9 none        7.25           9
+## 10 none        9.26          10
 ## # … with 140 more rows
 ```
 ]
@@ -827,7 +828,7 @@ The simplest model of this data is to use the grand mean across all conditions.
 ]
 
 .pull-right[
-The grand mean test score is 6.55, shown by the black line.
+The grand mean test score is 6.72, shown by the black line.
 
 The total variability in our data is the sum of the squared differences from the grand mean - the Total Sum of Squares, `\(SS_t\)`.
 
@@ -933,7 +934,7 @@ noise_aov
 ## 
 ## Response: test_score
 ##   Effect     df  MSE          F  ges p.value
-*## 1  noise 2, 147 0.93 129.24 *** .637   &lt;.001
+*## 1  noise 2, 147 0.94 109.27 *** .598   &lt;.001
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '+' 0.1 ' ' 1
 ```
@@ -957,9 +958,9 @@ means_noise
 
 ```
 ##  noise emmean    SE  df lower.CL upper.CL
-##  loud    4.80 0.136 147     4.54     5.07
-##  none    7.75 0.136 147     7.49     8.02
-##  quiet   7.10 0.136 147     6.83     7.37
+##  loud    5.14 0.137 147     4.87     5.41
+##  none    7.95 0.137 147     7.68     8.23
+##  quiet   7.05 0.137 147     6.78     7.32
 ## 
 ## Confidence level used: 0.95
 ```
@@ -978,9 +979,9 @@ pairs(means_noise)
 
 ```
 ##  contrast     estimate    SE  df t.ratio p.value
-##  loud - none    -2.950 0.193 147 -15.310  &lt;.0001
-##  loud - quiet   -2.294 0.193 147 -11.904  &lt;.0001
-##  none - quiet    0.656 0.193 147   3.406  0.0024
+##  loud - none    -2.814 0.194 147 -14.477  &lt;.0001
+##  loud - quiet   -1.910 0.194 147  -9.830  &lt;.0001
+##  none - quiet    0.903 0.194 147   4.647  &lt;.0001
 ## 
 ## P value adjustment: tukey method for comparing a family of 3 estimates
 ```
